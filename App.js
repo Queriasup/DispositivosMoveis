@@ -7,7 +7,7 @@ const Login = () => {
   return (
     <View style = {[styles.containerLogin, {flexDirection: "column"}]}>
       <View style = {[styles.iconContainer]}><Icon name='user' size={300} color='gray'/></View>
-      <View style = {[styles.loginInputContainer]}>
+      <View style = {[styles.loginInputsContainer]}>
         <View style = {[styles.inputContainer]}>
           <Text style = {[styles.label]}>Email</Text>
           <TextInput 
@@ -61,11 +61,51 @@ const Login = () => {
   );
   };
 
-  const Signup = () => {
+              ///////////////////////////
+              /////TELA DE CADASTRO//////
+              ///////////////////////////
+  const SignUp = () => {
     return (
       <View style = {[styles.containerSignUp, {flexDirection: "column"}]}>
-        <View style = {[styles.title]}><Text>Cadastro</Text></View>
-
+        <View style = {[styles.title]}>Cadastro</View>
+        <View style = {[styles.containerPage]}>
+          <View style = {[styles.signUpInputsContainer]}>
+            <View style = {[styles.inputContainer]}>
+              <Text style = {[styles.label]}>Nome</Text>
+              <TextInput 
+                style = {[styles.input]}  
+                autoCapitalize='none'/>
+            </View>
+            <View style = {[styles.inputContainer]}>
+              <Text style = {[styles.label]}>Email</Text>
+              <TextInput 
+                style = {[styles.input]} 
+                keyboardType='e-mail address' 
+                autoCapitalize='none'/>
+            </View>
+            <View style = {[styles.inputContainer]}>
+              <Text style = {[styles.label]}>Senha</Text>
+              <TextInput 
+                style = {[styles.input]} 
+                autoCapitalize='none'/>
+            </View>
+          </View>
+          <Button
+                title="Cadastrar"
+                loading={false}
+                loadingProps={{ size: 'small', color: 'white' }}
+                buttonStyle={{
+                  backgroundColor: 'rgba(111, 202, 186, 1)',
+                  borderRadius: 5,
+                }}
+                titleStyle={{ fontWeight: 'bold', fontSize: 23 }}
+                containerStyle={{
+                  marginHorizontal: 50,
+                  height: 50,
+                  width: 200,
+                  marginVertical: 10,
+                }}/>
+        </View>
       </View>
   );
   };
@@ -80,7 +120,7 @@ const Login = () => {
     flexDirection: 'column',
     alignItems: 'center',
   },
-  loginInputContainer: {
+  loginInputsContainer: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -107,9 +147,32 @@ const Login = () => {
     backgroundColor: 'rgba(111, 202, 186, 1)',
     borderRadius: 5,
   },
-  title:{
-
+  containerSignUp: {
+    flex: 1,
+    alignContent: 'center',
+  },
+  title: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'lightgray',
+    height: 75,
+    fontSize: 26,
+    fontWeight: 'bold',
+    fontFamily: 'Arial',
+  },
+  containerPage: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 20,
+  },
+  signUpInputsContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: 10,
   },
   });
   
-  export default Login;
+  export default SignUp;
