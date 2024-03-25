@@ -1,14 +1,22 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { View, FlatList } from 'react-native';
 import { Header, ListItem, Icon } from 'react-native-elements';
 
 export default class RelaContatos extends Component {
 
     render() {
-        const contacts = [
-            { id: '1', name: 'João', number: '123-456-7890' },
-            { id: '2', name: 'Maria', number: '987-654-3210' },
-        ];
+        
+        const [response, setResponse] = useState();
+
+        function consultarDados(){
+            axios.get('http://localhost:3000/clientes') 
+            .then(function (setResponse) {
+            console.log(setResponse);
+            }).catch(function (error) {
+            console.log(error);
+            });
+            
+            }
 
         return (
             <View style={{ flex: 1 }}>

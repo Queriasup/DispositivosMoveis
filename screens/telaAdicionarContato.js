@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, TextInput, Text, View } from 'react-native';
-import { Button } from '@rneui/themed';
+
 
 export default class TelaAdicionarContato extends Component {
 

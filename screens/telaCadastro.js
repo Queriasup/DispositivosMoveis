@@ -10,7 +10,6 @@ export default class TelaCadastro extends React.Component {
     render(){
         return (
             <View style = {[styles.containerSignUp, {flexDirection: "column"}]}>
-            <View style = {[styles.title]}>Cadastro</View>
             <View style = {[styles.containerPage]}>
             <View style = {[styles.signUpInputsContainer]}>
                 <View style = {[styles.inputContainer]}>
